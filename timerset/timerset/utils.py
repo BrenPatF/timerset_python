@@ -30,20 +30,22 @@ from time import process_time, sleep as t_sleep
 DELIM = '|'
 '''*************************************************************************************************
 
-rJust, lJust: Right/left-justify a string or number
+rJust, lJust: Right/left-justify a string or number, using val_just to validate input
 
 *************************************************************************************************'''
-def r_just(name, width): # string to print, width
+def val_just(name, s_width): # string to print, width
     sname = str(name)
-    if width < len(sname):
-        raise ValueError("rJust passed invalid parameters: " + sname + ", " + str(width))
-    return ' '*(width - len(sname)) + sname
+    if s_width < len(sname):
+        raise ValueError("*_just passed invalid parameters: " + sname + ", " + str(s_width))
+    return [sname, ' '*(s_width - len(sname))]
 
-def l_just(name, width): # string to print, width
-    sname = str(name)
-    if width < len(sname):
-        raise ValueError("lJust passed invalid parameters: " + sname + ", " + str(width))
-    return sname + ' '*(width - len(sname))
+def r_just(name, s_width): # string to print, width
+    vals = val_just(name, s_width)
+    return vals[1] + vals[0]
+ 
+def l_just(name, s_width): # string to print, width
+    vals = val_just(name, s_width)
+    return vals[0] + vals[1]
 
 '''*************************************************************************************************
 
