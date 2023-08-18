@@ -20,7 +20,9 @@ ts.increment_time ('sort_by_value_lambda')
 
 print(ts.format_results())
 ```
+
 This will create a timer set and time the sections, with listing at the end:
+
 ```
 Timer set: Timer_ts, constructed at 2018-12-04 07:11:19, written at 2018-12-04 07:11:19
 =======================================================================================
@@ -37,6 +39,7 @@ Total                       0.13        0.05           6        0.02097        0
 --------------------  ----------  ----------  ----------  -------------  -------------
 [Timer timed (per call in ms): Elapsed: 0.00249, CPU: 0.00233]
 ```
+
 To run the example from root (timerset) folder (Unix form):
 
 $ python ./examples/colgroup/maincolgroup.py
